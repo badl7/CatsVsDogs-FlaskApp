@@ -12,7 +12,7 @@ The model is built using the MobileNet architecture and trained on the [Dogs vs.
 
 <p align="center">
 
-<img src='dogscatsapp/static/img/home.png'>
+<img src='static/img/home.png'>
 
 </p>
 
@@ -20,7 +20,7 @@ The model is built using the MobileNet architecture and trained on the [Dogs vs.
 
 <p align="center">
 
-<img src='dogscatsapp/static/img/predict.png'>
+<img src='static/img/predict.png'>
 
 </p>
 
@@ -28,7 +28,7 @@ The model is built using the MobileNet architecture and trained on the [Dogs vs.
 
 <p align="center">
 
-<img src='dogscatsapp/static/img/prediction.png'>
+<img src='static/img/prediction.png'>
 
 </p>
 
