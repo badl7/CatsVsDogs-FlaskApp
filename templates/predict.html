@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+
+<head>
+  <meta charset="UTF-8">
+  <title> Prediction</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<script>
+  function createConfetti() {
+  setInterval(() => {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 5 + 4 + "s";
+    heart.innerText = '🤍';
+    document.body.appendChild(heart);
+    setTimeout(() => {
+      heart.remove();
+    }, 6000);
+  }, 100);
+}
+
+function createHeart() {
+  createConfetti();
+  setTimeout(() => {
+    clearInterval();
+  }, 10000);
+}
+
+
+</script>
+
+<body style="height: 100%;">
+
+  <h4
+    style="margin: auto;width: 80%; text-align: center; margin-top: 20px;  text-transform: uppercase; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: bolder;">
+    PREDICTION</h4>
+  <div style="width: 90%; margin: auto; text-align: center">
+    <img src="{{ url_for('send_file', filename=image_file_name)}}"
+      style="max-width: 500px; max-height: 450px; margin-top: 30px; margin-bottom: 10px">
+    <p style="font-style:oblique">{{ image_file_name }}</p>
+
+
+    <h3><b>This Image contains<span
+          style="color: #61305D ; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"> {{ acc }} % </span> certainty that is the
+        <span style="color: #FF3535 ;">{{ label }}</span></b></h3>
+
+    <br>
+    <br>
+    <div class="text-center">
+      <button type="button" class="btn btn-success" onclick="createHeart()">Correct</button>
+      <button type="button" class="btn btn-danger" onclick="window.location.href = '/'">Incorrect</button>
+    </div>
+
+    <br>
+    <br>
+    <a style="color: #8f0404;" href="/">Back to Home </a>
+  </div>
+  <div class="wrapper">
+    <div class="footer-wrapper">
+      {% include 'footer.html' %}
+    </div>
+  </div>
+  
+</body>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+  * {
+    box-sizing: border-box;
+  }
+
+
+
+  .heart {
+    color: rgb(4, 8, 58);
+    position: fixed;
+    top: -1vh;
+    font-size: 2rem;
+    transform: translateY(0);
+    animation: fall 5s linear forwards;
+  }
+
+  @keyframes fall {
+    to {
+      transform: translateY(105vh);
+    }
+  }
+
+  .wrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  .footer-wrapper {
+    text-align: center;
+    width: 100%;
+    align-self: center;
+    height: 100%;
+  }
+</style>
+
+</html>
