@@ -10,30 +10,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<script>
-  function createConfetti() {
-  setInterval(() => {
-    const heart = document.createElement('div');
-    heart.classList.add('heart');
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = Math.random() * 5 + 4 + "s";
-    heart.innerText = '🤍';
-    document.body.appendChild(heart);
-    setTimeout(() => {
-      heart.remove();
-    }, 6000);
-  }, 100);
-}
-
-function createHeart() {
-  createConfetti();
-  setTimeout(() => {
-    clearInterval();
-  }, 10000);
-}
-
-
-</script>
 
 <body style="height: 100%;">
 
@@ -53,7 +29,7 @@ function createHeart() {
     <br>
     <br>
     <div class="text-center">
-      <button type="button" class="btn btn-success" onclick="createHeart()">Correct</button>
+      <button type="button" class="btn btn-success" onclick="window.location.href = '/'">Correct</button>
       <button type="button" class="btn btn-danger" onclick="window.location.href = '/'">Incorrect</button>
     </div>
 
