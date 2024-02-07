@@ -14,6 +14,5 @@ COPY requirements.txt ./requirements.txt
 RUN python3.11 -m venv venv && \
     /bin/bash -c "source venv/bin/activate && pip install --upgrade pip && pip install -r requirements.txt"
 
-ENTRYPOINT ["./venv/bin/python3.11"]
 EXPOSE 5000
-CMD ["python", "app.py"]
+CMD python3.11 ./app.py
