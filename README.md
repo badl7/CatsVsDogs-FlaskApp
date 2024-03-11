@@ -63,7 +63,10 @@ The final model achieved an accuracy of 98% on the test set, ** which is good pe
 A CNN is a deep learning model that is commonly used for image classification tasks. In this project, we used the MobileNet architecture, which is optimized for mobile devices and has a small memory footprint. The model is trained on the Dogs vs. Cats dataset using TensorFlow and Keras. The MobileNet of the model is available [here](https://github.com/badl7/TensorFlow_Developer/blob/main/Cnn_in_TensorFlow/CNNs/Cats_vs_Dogs_MobileNetv2.ipynb). Also Inception of the model is available [here](https://github.com/badl7/TensorFlow_Developer/blob/main/Cnn_in_TensorFlow/CNNs/inception_v3_catVSdog.ipynb).
 
 You can find details in the [article](https://medium.com/@betul.gurbuz.dev/convnets-cnn-74aa18f2d543).
-
+## Docker
+```%bash
+docker push badl7/catdogflaskapp
+```
 ## Next Steps
 
 Here are some ideas for further development:
